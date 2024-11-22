@@ -106,6 +106,17 @@ function Orderdetail() {
       size: 120,
     },
     {
+      accessorKey: "time",
+      header: "Time",
+      Cell: ({ row }) => {
+       console.log('row', row.original);
+       return(
+       <Typography >
+          {row && row.original && row.original?.time}
+        </Typography>)
+      },
+    },
+    {
       accessorKey: "mesage",
       header: "Message",
       size: 120,

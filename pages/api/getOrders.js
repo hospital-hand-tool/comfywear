@@ -5,7 +5,7 @@ const handler = async (req, res) => {
   if (req.method === "GET") {
     let product;
     try {
-      product = await Orders.find();
+      product = await Orders.find().sort({ _id: -1 });
 
       return res.send({ success: true, payload: product });
     } catch (error) {

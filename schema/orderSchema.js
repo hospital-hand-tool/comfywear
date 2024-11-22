@@ -17,7 +17,9 @@ const OrderSchema = new mongoose.Schema({
   },
 
   orders: [],
-});
+
+
+},{timestamps:true});
 mongoose.models = {};
 module.exports = mongoose.model("order", OrderSchema);
 

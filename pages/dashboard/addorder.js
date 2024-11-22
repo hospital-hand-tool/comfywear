@@ -33,6 +33,7 @@ import AddOrderTable from "../../components/Table/AddOrderTable";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import QRCode from "react-qr-code";
 const TAX_RATE = 0;
 
 function priceRow(qty, unit) {
@@ -318,6 +319,7 @@ function AddOrder() {
       mesage: message,
       actualProductRate: actualRate,
       totalProductQuantity: totalQuantity,
+      time: moment().format('hh:mm A')
     };
     setprintData(newObj);
 
@@ -327,8 +329,8 @@ function AddOrder() {
       });
 
       if (res.data.success) {
-        toast.success("Order Placed Successfully");
-        handleOpen();
+      toast.success("Order Placed Successfully");
+      handleOpen();
         handleReset();
       }
     } catch (error) {
@@ -530,13 +532,23 @@ function AddOrder() {
             >
               <Box flexDirection={"column"}>
                 <Box>
-                  <Image
+                  {/* <Image
                     src="/frame.png"
                     alt="logo"
                     width={130}
                     height={130}
                     quality={100}
+                  /> */}
+                  <QRCode
+                    size={256}
+                    style={{ height: "auto", maxWidth: "70%", width: "70%" }}
+                    value={
+                      "https://www.google.com/maps/place/Comfy+Wear+Wear-house/@31.417432,74.2188722,15z/data=!4m16!1m9!3m8!1s0x3919019d97047fe7:0x6420a55e75ee18f5!2sComfy+Wear+Wear-house!8m2!3d31.417432!4d74.2188722!9m1!1b1!16s%2Fg%2F11tsp86qgx!3m5!1s0x3919019d97047fe7:0x6420a55e75ee18f5!8m2!3d31.417432!4d74.2188722!16s%2Fg%2F11tsp86qgx?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
+                    }
+                    title={"Wearhouse address"}
+                    viewBox={`0 0 156 156`}
                   />
+                  <p style={{margin:'0px', fontWeight:"bold"}}>Wearhouse ↑</p>
                 </Box>
                 <Box fontWeight={"medium"} fontSize={"13px"}>
                   Har suit ab factory rate par!
