@@ -319,7 +319,7 @@ function AddOrder() {
       mesage: message,
       actualProductRate: actualRate,
       totalProductQuantity: totalQuantity,
-      time: moment().format('hh:mm A')
+      time: moment().format("hh:mm A"),
     };
     setprintData(newObj);
 
@@ -329,8 +329,8 @@ function AddOrder() {
       });
 
       if (res.data.success) {
-      toast.success("Order Placed Successfully");
-      handleOpen();
+        toast.success("Order Placed Successfully");
+        handleOpen();
         handleReset();
       }
     } catch (error) {
@@ -528,6 +528,7 @@ function AddOrder() {
               display={"flex"}
               alignItems={"center"}
               justifyContent={"space-between"}
+              paddingX={"5px"}
               // flexDirection={"column-reverse"}
             >
               <Box flexDirection={"column"}>
@@ -539,7 +540,7 @@ function AddOrder() {
                     height={130}
                     quality={100}
                   /> */}
-                  <QRCode
+                  {/* <QRCode
                     size={256}
                     style={{ height: "auto", maxWidth: "70%", width: "70%" }}
                     value={
@@ -548,7 +549,22 @@ function AddOrder() {
                     title={"Wearhouse address"}
                     viewBox={`0 0 156 156`}
                   />
-                  <p style={{margin:'0px', fontWeight:"bold"}}>Wearhouse ↑</p>
+                  <p style={{ margin: "0px", fontWeight: "bold" }}>
+                    Wearhouse ↑
+                  </p> */}
+                  {/* <Box fontWeight={"medium"} fontSize={"13px"}>
+                    For Whole Sale Rate Visit
+                  </Box>
+                  <Box fontWeight={"medium"} fontSize={"13px"}>
+                    comfywear.com.pk
+                  </Box>
+                  <Box fontWeight={"medium"} fontSize={"13px"}>
+                    or
+                  </Box> */}
+
+                  <Box fontWeight={"medium"} fontSize={"13px"}>
+                    House 240 Block A Public Health Society LDA Avenue 1 Lahore
+                  </Box>
                 </Box>
                 <Box fontWeight={"medium"} fontSize={"13px"}>
                   Har suit ab factory rate par!
@@ -560,8 +576,8 @@ function AddOrder() {
                 <Image
                   src="/logo2.jpeg"
                   alt="logo"
-                  width={140}
-                  height={140}
+                  width={100}
+                  height={100}
                   quality={100}
                   // height={"50%"}
                 />
@@ -776,6 +792,7 @@ function AddOrder() {
               gap={"0.5rem"}
               flexDirection={"column"}
             >
+              <Box> For Whole Sale visit comfywear.com.pk</Box>
               <Box> Thanks for Shopping</Box>
               <Box>
                 <span style={{ fontWeight: "bold" }}>Contact :</span>{" "}
