@@ -562,11 +562,11 @@ function AddOrder() {
                     or
                   </Box> */}
 
-                  <Box fontWeight={"medium"} fontSize={"13px"}>
+                  <Box fontWeight={"bold"} fontSize={"13px"}>
                     House 240 Block A Public Health Society LDA Avenue 1 Lahore
                   </Box>
                 </Box>
-                <Box fontWeight={"medium"} fontSize={"13px"}>
+                <Box fontWeight={"bold"} fontSize={"13px"}>
                   Har suit ab factory rate par!
                 </Box>
 
@@ -792,7 +792,10 @@ function AddOrder() {
               gap={"0.5rem"}
               flexDirection={"column"}
             >
-              <Box> For Whole Sale visit comfywear.com.pk</Box>
+              <Box fontWeight={"bold"}>
+                {" "}
+                For Whole Sale visit comfywear.com.pk
+              </Box>
               <Box> Thanks for Shopping</Box>
               <Box>
                 <span style={{ fontWeight: "bold" }}>Contact :</span>{" "}
